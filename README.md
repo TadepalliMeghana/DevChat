@@ -1,48 +1,39 @@
 # DevChat 💬
 
-A real-time chat application built with React, Node.js, Express, Socket.IO, and MySQL. DevChat supports user authentication, conversations, message history, and sending messages.
+A real-time chat application built with **React, Node.js, Express.js, Socket.IO, and MySQL**. DevChat allows users to log in, view conversations, access previous messages, and send messages with persistent database storage.
 
 ## ✨ Features
 
 - User login and authentication
-- Chat list and existing conversations
-- Loading previous messages
-- Sending and receiving chat messages
-- Persistent message storage using MySQL
+- Conversation list and chat interface
+- Loading chat history from MySQL
+- Sending and receiving messages
+- Persistent message storage
 - Real-time communication using Socket.IO
 
 ## 🛠️ Tech Stack
 
-**Frontend**
-- React
-- Vite
-- JavaScript
-- CSS
-
-**Backend**
-- Node.js
-- Express.js
-- Socket.IO
-- JWT authentication
-
-**Database**
-- MySQL
-
-**Deployment**
-- Render for backend hosting
-- Aiven for managed MySQL hosting
+| Area | Technologies |
+|---|---|
+| Frontend | React, Vite, JavaScript, CSS |
+| Backend | Node.js, Express.js |
+| Real-time communication | Socket.IO |
+| Authentication | JWT |
+| Database | MySQL |
+| Deployment | Render, Aiven MySQL |
+| Version control | Git, GitHub |
 
 ## 📁 Project Structure
 
 ```text
 DevChat/
-├── client/          # React + Vite frontend
-├── server/          # Node.js + Express backend
+├── client/        # React + Vite frontend
+├── server/        # Node.js + Express backend
 ├── .gitignore
 └── README.md
 ```
 
-## 🚀 Run Locally
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -57,26 +48,28 @@ git clone https://github.com/TadepalliMeghana/DevChat.git
 cd DevChat
 ```
 
-### 2. Configure the backend
+### 2. Configure and start the backend
 
 ```bash
 cd server
 npm install
 ```
 
-Create a `.env` file using the environment variable names expected by your backend code. Configure your database credentials, JWT secret, and other required settings.
+Create a `.env` file in the `server` directory and configure the environment variables required by the backend, including the database connection settings and JWT secret.
 
-Never commit your `.env` file or database credentials.
+Use the variable names expected by your server code. Keep credentials and secrets private.
 
-Start the backend using the script configured in `server/package.json`:
+Start the backend:
 
 ```bash
 npm start
 ```
 
-### 3. Configure the frontend
+If your project uses a development script, you can use `npm run dev` instead.
 
-Open another terminal:
+### 3. Configure and start the frontend
+
+Open a second terminal:
 
 ```bash
 cd client
@@ -84,55 +77,71 @@ npm install
 npm run dev
 ```
 
-### 4. Open DevChat
+Configure the frontend to use the correct backend API URL for your environment.
 
-- Frontend: http://localhost:5173/
-- Backend: http://localhost:5000
+### 4. Open the application
 
-Keep both development servers running while using the application.
+- **Frontend:** http://localhost:5173/
+- **Backend:** http://localhost:5000
 
-## 🗄️ Database
+These addresses are for local development. Keep the required servers running while testing the application.
 
-DevChat uses MySQL to store application data, including chat messages and other records defined by the database schema.
+## 🗄️ Database Configuration
 
-For local development, configure a MySQL database and import your database schema or backup.
+DevChat uses MySQL to store application data, including messages and other records defined by the database schema.
 
-For production, configure the backend to connect securely to your hosted MySQL instance on Aiven using the connection details provided by Aiven.
+For local development:
 
-Do not commit database dumps, passwords, private keys, or production credentials.
+1. Set up a MySQL database.
+2. Configure the backend's database connection settings.
+3. Import the required schema or database backup into your local database.
+
+For production, configure the backend to connect to your Aiven MySQL instance using the connection details and SSL settings required by your service.
+
+**Never commit database backups, passwords, private keys, certificates containing secrets, or `.env` files.**
 
 ## ☁️ Deployment
 
-- **Backend:** Render
-- **Database:** Aiven MySQL
+The planned deployment setup is:
 
-Set the required environment variables in the Render service settings. Configure the production database connection and ensure the frontend uses the deployed backend URL rather than `localhost`.
+- **Backend hosting:** Render
+- **Managed database:** Aiven MySQL
 
-Deployment URLs can be added here once the public DevChat services are verified.
+For deployment:
 
-## 🔐 Security
+1. Configure the backend environment variables in Render.
+2. Set up the production MySQL connection and required SSL configuration.
+3. Configure the frontend to use the deployed backend URL instead of `localhost`.
+4. Configure CORS and any authentication settings required for the production frontend.
+5. Test login, conversations, message delivery, and message persistence after deployment.
 
-- Keep secrets in environment variables.
-- Do not commit `.env` files or SQL database backups.
-- Use a strong JWT secret.
-- Use HTTPS for production traffic.
-- Validate authentication and authorization on protected API routes.
+Public deployment links should be added here once the frontend and backend URLs have been verified.
 
-## 🧪 Testing
+## 🧪 Tested Workflows
 
-The following core workflows have been tested locally:
+The following workflows have been tested locally:
 
-- Login with an existing account
+- Logging in with an existing account
 - Viewing the chat list
 - Loading previous messages
-- Sending new messages
-- Refreshing the page and verifying message persistence
+- Sending messages
+- Refreshing the page and confirming messages persist
+
+## 🔐 Security Practices
+
+- Store credentials in environment variables.
+- Keep `.env` files and database backups out of Git.
+- Use a strong JWT secret.
+- Use HTTPS in production.
+- Validate authentication and authorization on protected routes.
+- Configure database access and CORS appropriately for deployment.
 
 ## 👩‍💻 Author
 
 **Meghana Tadepalli**
 
-GitHub: [TadepalliMeghana](https://github.com/TadepalliMeghana)
+- GitHub: [TadepalliMeghana](https://github.com/TadepalliMeghana)
+- Repository: [DevChat](https://github.com/TadepalliMeghana/DevChat)
 
 ---
 
