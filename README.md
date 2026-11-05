@@ -81,9 +81,9 @@ Configure the frontend to use the correct backend API URL for your environment.
 
 ### 4. Open the application
 
-- **Frontend:** http://localhost:5173/
-- **Backend:** http://localhost:5000
+-**Frontend:** http://localhost:5175
 
+-**Backend:** http://localhost:5000
 These addresses are for local development. Keep the required servers running while testing the application.
 
 ## 🗄️ Database Configuration
